@@ -1,5 +1,6 @@
 package com.global.beverage.jpmorgan.app.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.global.beverage.jpmorgan.app.vo.Stock;
@@ -14,6 +15,12 @@ public interface SuperSimpleStocksService {
 	Stock calculatePERatio(Stock stock);
 	Double calculateStockPrice(List<Trade> listTrade);
 	Stock calculateStockPrice(Stock stock);
+	boolean savingTrade(Trade trade);
+	Double calculateStockPriceByLastSavedTrades();
+	Stock newStock(String symbol, String type, Double lastDividend, Double fixedDividend, Double parValue );
+	Double calculateGBCE();
+	List<Stock> getDBStock();
+	void updateDBStock(List<Stock> updateList);
 	
 	
 	
